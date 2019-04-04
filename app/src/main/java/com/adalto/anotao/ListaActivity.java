@@ -21,7 +21,8 @@ public class ListaActivity extends AppCompatActivity {
 
     ListView lvLista;
     List<Anotacao> lista;
-    ArrayAdapter adapter;
+//    ArrayAdapter adapter;
+    AdapterAnotacao adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,8 +80,9 @@ public class ListaActivity extends AppCompatActivity {
     private void carregarLista(){
 
         lista = AnotacaoDAO.listar(this);
-        adapter = new ArrayAdapter(this,
-                android.R.layout.simple_list_item_1, lista );
+//        adapter = new ArrayAdapter(this,
+//                android.R.layout.simple_list_item_1, lista );
+        adapter = new AdapterAnotacao(this, lista);
         lvLista.setAdapter(adapter);
     }
 
